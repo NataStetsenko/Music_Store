@@ -1,0 +1,32 @@
+﻿@model Music_Store.Models.UserSing
+@{
+    ViewData["Title"] = "Sing";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="login-box" style="width:400px; margin-left: 32%">
+    <form asp-action="Sing">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <label class="wt">Логин</label><span asp-validation-for="Login" style="margin-left:30px">
+            </span>
+        <div class="user-box">
+            <input autocomplete="off" asp-for="Login" class="form-control" />
+        </div>
+        <label class="wt">Пароль</label> <span asp-validation-for="Password" style="margin-left:35%"></span>
+        <div class="user-box">
+            <input asp-for="Password" type="password" class="form-control" />
+        </div>
+        <div class="user-box">
+            <a href="#">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span><input type="submit" value="Войти" style="width:320px; color:aliceblue" class="btn btn-info btn-block" />
+            </a>
+        </div>
+    </form>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

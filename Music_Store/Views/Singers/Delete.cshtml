@@ -1,0 +1,30 @@
+﻿@model Music_Store.BLL.DTO.SingerDTO
+
+@*@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}*@
+
+<div>
+    <h3 class="wt">Вы уверенны, что хотите удалить этого исполнителя?</h3>
+    <div>
+        <hr />
+        <dl class="row">
+            <dt class="row-sm-6">
+                <label class="wt">@Html.DisplayNameFor(model => model.Name)</label>
+            </dt>
+            <dd class="row-sm-6">
+                <label class="wt"> @Html.DisplayFor(model => model.Name)</label>
+            </dd>
+        </dl>
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <div class="user-box">
+                <input type="submit" value="Удалить" class="btn btn-danger" />
+            </div>
+            <div>
+                <a asp-action="Index">Назад к списку</a>
+            </div>
+        </form>
+    </div>
+</div>

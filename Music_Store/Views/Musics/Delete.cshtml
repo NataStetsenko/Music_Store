@@ -1,0 +1,57 @@
+﻿@model Music_Store.BLL.DTO.MusicDTO
+
+@*@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}*@
+
+@*<h1>Delete</h1>*@
+
+<div>
+    <h3 class="wt">Вы уверенны, что хотите удалить этот клип?</h3>
+    <div>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-6">
+                <label class="wt"> @Html.DisplayNameFor(model => model.Name)</label>
+            </dt>
+            <dd class="col-sm-6">
+                <label class="wt"> @Html.DisplayFor(model => model.Name)</label>
+            </dd>
+            <dt class="col-sm-6">
+                <label class="wt"> @Html.DisplayNameFor(model => model.Album)</label>
+            </dt>
+            <dd class="col-sm-6">
+                <label class="wt"> @Html.DisplayFor(model => model.Album)</label>
+            </dd>
+            <dt class="col-sm-6">
+                <label class="wt"> @Html.DisplayNameFor(model => model.Year)</label>
+            </dt>
+            <dd class="col-sm-6">
+                <label class="wt"> @Html.DisplayFor(model => model.Year)</label>
+            </dd>
+          @*  <dt class="col-sm-6">
+                <label class="wt">  @Html.DisplayNameFor(model => model.Video)</label>
+            </dt>
+            <dd class="col-sm-6">
+                <label class="wt"> @Html.DisplayFor(model => model.Video)</label>
+            </dd>*@
+            <dt class="col-sm-6">
+                <label class="wt"> @Html.DisplayNameFor(model => model.VideoDate)</label>
+            </dt>
+            <dd class="col-sm-6">
+                <label class="wt"> @Html.DisplayFor(model => model.VideoDate)</label>
+            </dd>
+        </dl>
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="Video" />
+            <div class="user-box">
+                <input type="submit" value="Удалить" class="btn btn-danger" />
+            </div>
+            <div>
+                <a asp-action="Index2">Назад к списку</a>
+            </div>
+        </form>
+    </div>
+</div>

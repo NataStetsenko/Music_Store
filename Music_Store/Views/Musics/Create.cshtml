@@ -1,0 +1,51 @@
+﻿@model Music_Store.Models.MusicView
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="login-box" style="width:600px; margin-left: 22%">
+    <h3 class="wt" style="text-align:center">Добавить песню</h3>
+    <hr />
+    <form asp-action="Create" enctype="multipart/form-data">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <label class="wt" asp-for="Name" class="control-label"></label> <span style="margin-left: 30px" asp-validation-for="Name" class="text-danger"></span>
+        <div class="user-box">
+            <input asp-for="Name" autocomplete="off" class="form-control" />
+        </div>
+        <label class="wt" asp-for="Album" class="control-label"></label> <span style="margin-left:10px" asp-validation-for="Album" class="text-danger"></span>
+        <div class="user-box">
+            <input asp-for="Album" autocomplete="off" class="form-control" />
+        </div>
+        <label class="wt" asp-for="Year" class="control-label"></label>  <span style="margin-left:10px" asp-validation-for="Year" class="text-danger"></span>
+        <div class="user-box">
+            <input asp-for="Year" autocomplete="off" class="form-control" />
+        </div>
+        <label class="wt">Видео</label>
+        <div class="user-box">
+            <input type="file" name="uploadedFile" />
+        </div>
+  
+            <label class="wt" style="padding-bottom:5px" asp-for="MusicStyle" class="control-label"></label>
+       
+        <div class="user-box">
+            <select asp-for="MusicStyle" class="form-control" asp-items="ViewBag.MusicStyle"></select>
+        </div>
+        <div class="user-box">
+            <select asp-for="Singer" class="form-control" asp-items="ViewBag.Singer"></select>
+        </div>
+        <div class="user-box">
+            <input type="submit" value="Отправить" class="btn btn-primary" />
+        </div>
+        <div>
+            <a asp-action="Index2">Назад к списку</a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,55 @@
+﻿@model Music_Store.BLL.DTO.UserDTO
+
+@{
+    ViewData["Title"] = "DeleteUser";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="login-box">
+    <h3 class="wt">Вы уверенны, что хотите удалить этого участника?</h3>
+    <div>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-6">
+                <label class="wt">  @Html.DisplayNameFor(model => model.Name)</label>
+            </dt>
+            <dd class="col-sm-6">
+                <label class="wt">  @Html.DisplayFor(model => model.Name)</label>
+            </dd>
+            <dt class="col-sm-6">
+                <label class="wt">  @Html.DisplayNameFor(model => model.Surname)</label>
+            </dt>
+            <dd class="col-sm-6">
+                <label class="wt">  @Html.DisplayFor(model => model.Surname)</label>
+            </dd>
+            <dt class="col-sm-6">
+                <label class="wt"> @Html.DisplayNameFor(model => model.Login)</label>
+            </dt>
+            <dd class="col-sm-6">
+                <label class="wt"> @Html.DisplayFor(model => model.Login)</label>
+            </dd>
+            <dt class="col-sm-6">
+                <label class="wt"> @Html.DisplayNameFor(model => model.Mail)</label>
+            </dt>
+            <dd class="col-sm-6">
+                <label class="wt"> @Html.DisplayFor(model => model.Mail)</label>
+            </dd>
+            <dt class="col-sm-6">
+                <label class="wt"> @Html.DisplayNameFor(model => model.UserLevel)</label>
+            </dt>
+            <dd class="col-sm-6">
+                <label class="wt"> @Html.DisplayFor(model => model.UserLevel)</label>
+            </dd>
+        </dl>
+        <form asp-action="DeleteUser">
+            <input type="hidden" asp-for="Id" />
+            <div class="user-box">
+                <input type="submit" value="Удалить" class="btn btn-danger" />
+            </div>
+            <div>
+                <a asp-action="AllUsers">Назад к списку</a>
+            </div>
+        </form>
+    </div>
+
+</div>
+

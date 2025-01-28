@@ -1,0 +1,48 @@
+﻿@model Music_Store.BLL.DTO.UserDTO
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<hr />
+<div class="login-box">
+    <form asp-action="Edit">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Id" />
+        <input type="hidden" asp-for="Password" />
+        <input type="hidden" asp-for="PassSalt" />
+        <label class="wt" asp-for="Name" class="control-label"></label><div class="user-box">
+            <input readonly asp-for="Name" class="form-control" />
+        </div>
+        <label class="wt" asp-for="Surname" class="control-label"></label><div class="user-box">
+            <input readonly asp-for="Surname" class="form-control" />
+        </div>
+        <label class="wt" asp-for="Login" class="control-label"></label><div class="user-box">
+            <input readonly asp-for="Login" class="form-control" />
+        </div>
+        <label class="wt" asp-for="Mail" class="control-label"></label><div class="user-box">
+            <input readonly asp-for="Mail" class="form-control" />
+        </div>
+        <label class="wt" asp-for="UserLevel" class="control-label"></label><span asp-validation-for="UserLevel" style="margin-left:25%;color: #f52f78;"></span>
+        <div class="user-box">
+            <input asp-for="UserLevel" class="form-control" />
+        </div>
+        <div class="user-box">
+            <input type="submit" value="Сохранить" class="btn btn-primary" />
+        </div>
+        <div>
+            <a asp-action="AllUsers">Назад к списку</a>
+        </div>
+    </form>
+</div>
+
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Music_Store.BLL.DTO.UserDTO>
+@{
+    ViewData["Title"] = "AllUsers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="login-box2" style="width:1000px">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    <label class="wt">  @Html.DisplayNameFor(model => model.Name)</label>
+                </th>
+                <th>
+                    <label class="wt">  @Html.DisplayNameFor(model => model.Surname)</label>
+                </th>
+                <th>
+                    <label class="wt">  @Html.DisplayNameFor(model => model.Login)</label>
+                </th>
+                <th>
+                    <label class="wt">  @Html.DisplayNameFor(model => model.Mail)</label>
+                </th>
+                <th>
+                    <label class="wt">  @Html.DisplayNameFor(model => model.UserLevel)</label>
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                if (item.Login == "admin")
+                    continue;
+                <tr>
+                    <td>
+                        <label class="wt">@Html.DisplayFor(modelItem => item.Name) </label>
+                    </td>
+                    <td>
+                        <label class="wt">@Html.DisplayFor(modelItem => item.Surname) </label>
+                    </td>
+                    <td>
+                        <label class="wt">@Html.DisplayFor(modelItem => item.Login) </label>
+                    </td>
+                    <td>
+                        <label class="wt">@Html.DisplayFor(modelItem => item.Mail) </label>
+                    </td>
+                    <td>
+                        <label class="wt">@Html.DisplayFor(modelItem => item.UserLevel) </label>
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id" style="color: #f52f78;">Редактировать</a> |
+                        <a asp-action="DeleteUser" asp-route-id="@item.Id" style="color: #f52f78;">Удалить</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

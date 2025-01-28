@@ -1,0 +1,53 @@
+﻿@model Music_Store.Models.UserCreate
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="login-box" style="width:400px; margin-left: 32%">
+    <form asp-action="Create">
+        <h2 class="wt">Регистрация</h2>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <label class="wt">Имя</label> <span asp-validation-for="Name" style="margin-left:37%;color: #f52f78;"></span>
+        <div class="user-box">
+            <input asp-for="Name" autocomplete="off" style="padding:3px" />
+        </div>
+        <label class="wt">Фамилия</label> <span asp-validation-for="Surname" style="margin-left:32%;color: #f52f78;"></span>
+        <div class="user-box">
+            <input asp-for="Surname" autocomplete="off" style="padding:3px" class="form-control" />
+        </div>
+        <label class="wt">Логин</label> <span asp-validation-for="Login" style="margin-left:35%;color: #f52f78;"></span>
+        <div class="user-box">
+            <input asp-for="Login" autocomplete="off" style="padding:3px" class="form-control" />
+        </div>
+        <label class="wt">Пароль</label><span asp-validation-for="Password" style="margin-left:35%;color: #f52f78;"></span>
+        <div class="user-box">
+            <input asp-for="Password" autocomplete="off" style="padding:3px" type="password" class="form-control" />
+        </div>
+        <label class="wt">Пароль</label><span asp-validation-for="PasswordConfirm" style="margin-left:35%;color: #f52f78;"></span>
+        <div class="user-box">
+            <input asp-for="PasswordConfirm" style="padding:3px" type="password" class="form-control" />
+        </div>
+        <label class="wt">Адрес</label> <span asp-validation-for="Mail" style="margin-left:35%;color: #f52f78;"></span>
+        <div class="user-box">
+            <input asp-for="Mail" autocomplete="off" style="padding:3px" />
+        </div>
+        <div class="user-box">
+            <a href="#">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <input type="submit" value="Отправить" style="width:320px; color:aliceblue" class="btn btn-info btn-block" />
+            </a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+

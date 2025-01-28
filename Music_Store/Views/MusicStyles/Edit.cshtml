@@ -1,0 +1,31 @@
+﻿@model Music_Store.BLL.DTO.MusicStyleDTO
+
+@*@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}*@
+<div>
+    <h4 class="wt">Редактировать</h4>
+    <hr />
+
+    <form asp-action="Edit">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Id" />
+        <label asp-for="Style" class="control-label wt"></label> <span style="margin-left:10px; color: #f52f78;" asp-validation-for="Style"></span>
+        <div class="user-box">
+            <input asp-for="Style" class="form-control" />
+        </div>
+        <div class="user-box">
+            <input type="submit" value="Сохранить" class="btn btn-primary" />
+        </div>
+        <div>
+            <a asp-action="Index">Назад к списку</a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

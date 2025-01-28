@@ -1,0 +1,46 @@
+﻿@model Music_Store.Models.MusicViewEdit
+
+@*@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}*@
+
+<div >
+    <h4 class="wt">Редактировать</h4>
+    <hr />
+    <form asp-action="Edit">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <label asp-for="Name" class="control-label wt"></label><span style="margin-left:10px" asp-validation-for="Name" class="text-danger"></span>
+        <div class="user-box">
+            <input asp-for="Name" class="form-control" />
+        </div>
+        <label asp-for="Album" class="control-label wt"></label> <span style="margin-left:10px" asp-validation-for="Album" class="text-danger"></span>
+        <div class="user-box">
+            <input asp-for="Album" class="form-control" />
+        </div>
+        <label asp-for="Year" class="control-label wt"></label>  <span style="margin-left:10px" asp-validation-for="Year" class="text-danger"></span>
+        <div class="user-box">
+            <input asp-for="Year" class="form-control" />
+        </div>
+        <label asp-for="MusicStyle" class="control-label wt"></label><span asp-validation-for="MusicStyle" class="text-danger"></span>
+        <div class="user-box">
+            <select asp-for="MusicStyle" class="form-control" asp-items="ViewBag.MusicStyle"></select>
+        </div>
+        <label asp-for="Singer" class="control-label wt"></label><span asp-validation-for="Singer" class="text-danger"></span>
+        <div class="user-box">
+            <select asp-for="Singer" class="form-control" asp-items="ViewBag.Singer"></select>
+        </div>
+        <div class="user-box">
+            <input type="submit" value="Сохранить" class="btn btn-primary" />
+        </div>
+        <div>
+            <a asp-action="Index2">Назад к списку</a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,27 @@
+﻿@model Music_Store.Models.MusicStyle
+
+@*@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}*@
+
+<div>
+    <h3 class="wt">Добавить стиль</h3>
+    <hr />
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <label class="wt" asp-for="Style" class="control-label"></label><span style="margin-left:95px; color: #f52f78;" asp-validation-for="Style"></span>
+        <div class="user-box" style="margin-top:10px">
+            <input asp-for="Style" autocomplete="off" class="form-control" />
+            </div>
+      @*  <div class="user-box">
+            <input type="submit" value="Добавить" class="btn btn-primary" />
+            </div>*@
+            <div>
+                <a asp-action="Index">Назад к списку</a>
+            </div>
+        </form>
+    </div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,26 @@
+﻿@model Music_Store.Models.Singer
+
+@*@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}*@
+
+
+    <h3 class="wt">Добавить исполнителя</h3>
+    <hr />
+
+    <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <label class="wt" asp-for="Name" class="control-label"></label> <span style="margin-left:20px; color: #f52f78;" asp-validation-for="Name" class="text-danger"></span>
+        <div class="user-box" style="margin-top:10px">
+            <input asp-for="Name" autocomplete="off" class="form-control" />
+        </div>
+        <div>
+            <a asp-action="Index">Назад к списку</a>
+        </div>
+        </form>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
